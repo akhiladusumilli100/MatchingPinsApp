@@ -70,6 +70,8 @@ h1 {
     cursor: pointer;
     transition: all 0.2s ease;
 
+    display: inline-block;
+
     /* SVG becomes shape mask */
     -webkit-mask: url("images/pin.svg") no-repeat center;
     mask: url("images/pin.svg") no-repeat center;
@@ -106,14 +108,6 @@ h1 {
 .pin[data-color="white"] {
     background-color: #ecf0f1;
 }
-
-
-/* Colors */
-.blue { background: #2d9cdb; }
-.green { background: #27ae60; }
-.red { background: #eb5757; }
-.yellow { background: #f2c94c; }
-.white { background: #ecf0f1; }
 
 /* Buttons */
 .buttons {
