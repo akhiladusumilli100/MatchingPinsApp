@@ -65,25 +65,49 @@ h1 {
 
 /* Pins */
 .pin {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     transition: all 0.2s ease;
+
+    display: inline-block;
+
+    /* SVG becomes shape mask */
+    -webkit-mask: url("images/pin.svg") no-repeat center;
+    mask: url("images/pin.svg") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* default color */
+    background-color: #ecf0f1;
 }
 
+/* Selected effect */
 .pin.selected {
-    transform: scale(1.05);
-    border: 2px solid white;
-    box-shadow: 0 0 15px white;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px white);
 }
 
-/* Colors */
-.blue { background: #2d9cdb; }
-.green { background: #27ae60; }
-.red { background: #eb5757; }
-.yellow { background: #f2c94c; }
-.white { background: #ecf0f1; }
+/* Color mapping (NO FILTERS anymore) */
+.pin[data-color="blue"] {
+    background-color: #2d9cdb;
+}
+
+.pin[data-color="green"] {
+    background-color: #27ae60;
+}
+
+.pin[data-color="red"] {
+    background-color: #eb5757;
+}
+
+.pin[data-color="yellow"] {
+    background-color: #f2c94c;
+}
+
+.pin[data-color="white"] {
+    background-color: #ecf0f1;
+}
 
 /* Buttons */
 .buttons {

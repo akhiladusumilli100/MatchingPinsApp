@@ -25,7 +25,8 @@ function renderBoard() {
     game.guess.forEach((color, index) => {
         const pin = document.createElement("div");
 
-        pin.classList.add("pin", getColorClass(color));
+        pin.classList.add("pin");
+        pin.dataset.color = color;
 
         if (index === selectedIndex) {
             pin.classList.add("selected");
