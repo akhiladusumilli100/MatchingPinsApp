@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Match Pins</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="theme-color" content="#2f80ed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Match Pins">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎯 Match Pins</h1>
+
+    <div class="stats">
+
+        <div>
+            <h3>Moves</h3>
+            <span id="moves">0</span>
+        </div>
+
+        <div>
+            <h3>Correct</h3>
+            <span id="correct">0 / 5</span>
+        </div>
+
+    </div>
+
+    <div id="board"></div>
+
+    <p id="message">
+        Tap two pins to swap them.
+    </p>
+
+    <div class="buttons">
+
+        <button id="newGameButton">
+            New Game
+        </button>
+
+        <button id="checkButton">
+            Check
+        </button>
+
+    </div>
+
+</div>
+
+<div id="winPopup" class="popup hidden">
+
+    <div class="popup-content">
+
+        <h2>🎉 You Win!</h2>
+
+        <p>
+            You matched every pin!
+        </p>
+
+        <button id="playAgainButton">
+            Play Again
+        </button>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
