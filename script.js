@@ -23,11 +23,9 @@ function renderBoard() {
     board.innerHTML = "";
 
     game.guess.forEach((color, index) => {
-        const pin = document.createElement("img");
+        const pin = document.createElement("div");
 
         pin.classList.add("pin");
-
-        pin.src = "images/pin.svg";
         pin.dataset.color = color;
 
         if (index === selectedIndex) {
