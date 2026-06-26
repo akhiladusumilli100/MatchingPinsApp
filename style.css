@@ -69,33 +69,44 @@ h1 {
     height: 60px;
     cursor: pointer;
     transition: all 0.2s ease;
+
+    /* SVG becomes shape mask */
+    -webkit-mask: url("pin.svg") no-repeat center;
+    mask: url("pin.svg") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    /* default color */
+    background-color: #ecf0f1;
 }
 
+/* Selected effect */
 .pin.selected {
-    transform: scale(1.05);
+    transform: scale(1.1);
     filter: drop-shadow(0 0 12px white);
 }
 
-/* Color variations */
+/* Color mapping (NO FILTERS anymore) */
 .pin[data-color="blue"] {
-    filter: hue-rotate(200deg) saturate(2);
+    background-color: #2d9cdb;
 }
 
 .pin[data-color="green"] {
-    filter: hue-rotate(90deg) saturate(2);
+    background-color: #27ae60;
 }
 
 .pin[data-color="red"] {
-    filter: hue-rotate(0deg) saturate(2);
+    background-color: #eb5757;
 }
 
 .pin[data-color="yellow"] {
-    filter: hue-rotate(40deg) saturate(2);
+    background-color: #f2c94c;
 }
 
 .pin[data-color="white"] {
-    filter: none;
+    background-color: #ecf0f1;
 }
+
 
 /* Colors */
 .blue { background: #2d9cdb; }
