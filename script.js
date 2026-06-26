@@ -44,6 +44,8 @@ function handlePinClick(index) {
     if (selectedIndex === null) {
         selectedIndex = index;
         messageEl.textContent = "Select another pin to swap.";
+        renderBoard();
+        return;
     } else {
         if (selectedIndex === index) {
             selectedIndex = null;
