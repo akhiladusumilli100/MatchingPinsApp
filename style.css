@@ -71,8 +71,8 @@ h1 {
     transition: all 0.2s ease;
 
     /* SVG becomes shape mask */
-    -webkit-mask: url("pin.svg") no-repeat center;
-    mask: url("pin.svg") no-repeat center;
+    -webkit-mask: url("images/pin.svg") no-repeat center;
+    mask: url("images/pin.svg") no-repeat center;
     -webkit-mask-size: contain;
     mask-size: contain;
 
