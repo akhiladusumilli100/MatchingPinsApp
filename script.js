@@ -7,10 +7,10 @@ const board = document.getElementById("board");
 const movesEl = document.getElementById("moves");
 const correctEl = document.getElementById("correct");
 const messageEl = document.getElementById("message");
+const finalMovesEl = document.getElementById("finalMoves");
 
 const winPopup = document.getElementById("winPopup");
 const newGameButton = document.getElementById("newGameButton");
-const checkButton = document.getElementById("checkButton");
 const playAgainButton = document.getElementById("playAgainButton");
 
 // Convert pin color name to CSS class
@@ -73,6 +73,7 @@ function updateStats() {
 // Check win condition
 function checkWin() {
     if (game.checkGameOver()) {
+        finalMovesEl.textContent = `You solved it in ${moves} moves!`;
         winPopup.classList.remove("hidden");
     }
 }
@@ -89,10 +90,6 @@ function newGame() {
 
 // Button listeners
 newGameButton.addEventListener("click", newGame);
-checkButton.addEventListener("click", () => {
-    const correct = game.checkPins();
-    messageEl.textContent = `${correct} out of ${game.size} correct.`;
-});
 
 playAgainButton.addEventListener("click", newGame);
 
