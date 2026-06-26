@@ -1,44 +1,59 @@
 class MatchPins {
-    
+
     constructor(pins = ["blue", "green", "red", "yellow", "white"]) {
+
+        // correct solution
         this.pins = [...pins];
 
+        // current board state (what user sees)
         this.guess = [...pins];
-        this.shufflePins(this.guess);
 
         this.size = this.pins.length;
+
+        this.shufflePins();
     }
 
+    /* RESET GAME */
+    reset() {
+        this.guess = [...this.pins];
+        this.shufflePins();
+    }
+
+    /* SET FULL GUESS (optional external sync) */
     setGuess(guess) {
+        if (!Array.isArray(guess) || guess.length !== this.size) {
+            console.error("Invalid guess array");
+            return;
+        }
         this.guess = [...guess];
     }
 
-    showPins() {
-        console.log(this.pins);
+    /* SWAP TWO POSITIONS */
+    switchPin(index1, index2) {
+
+        if (
+            index1 < 0 || index2 < 0 ||
+            index1 >= this.size || index2 >= this.size
+        ) {
+            console.error("Invalid swap indices");
+            return;
+        }
+
+        const temp = this.guess[index1];
+        this.guess[index1] = this.guess[index2];
+        this.guess[index2] = temp;
     }
 
-    showGuess() {
-        console.log(this.guess);
-    }
-
-    switchPin(pin1, pin2) {
-        const temp = this.guess[pin1];
-        this.guess[pin1] = this.guess[pin2];
-        this.guess[pin2] = temp;
-    }
-
-    shufflePins(arr) {
-        for (let i = arr.length - 1; i > 0; i--) {
+    /* SHUFFLE CURRENT GUESS */
+    shufflePins() {
+        for (let i = this.guess.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+            [this.guess[i], this.guess[j]] = [this.guess[j], this.guess[i]];
         }
     }
 
+    /* GET NUMBER OF CORRECT POSITIONS */
     checkPins() {
-        if (this.size !== this.guess.length) {
-            return null;
-        }
-
         let count = 0;
 
         for (let i = 0; i < this.size; i++) {
@@ -50,18 +65,18 @@ class MatchPins {
         return count;
     }
 
+    /* CHECK WIN CONDITION */
     checkGameOver() {
-        const correct = this.checkPins();
+        return this.checkPins() === this.size;
+    }
 
-        if (correct === null) {
-            console.error("Invalid Guess Length");
-            return false;
-        }
+    /* GET CURRENT STATE (VERY USEFUL FOR UI) */
+    getGuess() {
+        return [...this.guess];
+    }
 
-        if (correct === this.size) {
-            return true;
-        }
-
-        return false;
+    /* GET SOLUTION (optional debugging) */
+    getSolution() {
+        return [...this.pins];
     }
 }
