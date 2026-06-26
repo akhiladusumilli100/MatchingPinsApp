@@ -69,13 +69,13 @@ h1 {
     height: 55px;
     border-radius: 50%;
     cursor: pointer;
-    border: 3px solid transparent;
     transition: all 0.2s ease;
 }
 
 .pin.selected {
-    border: 3px solid #fff;
-    transform: scale(1.1);
+    transform: scale(1.05);
+    border: 2px solid white;
+    box-shadow: 0 0 15px white;
 }
 
 /* Colors */
