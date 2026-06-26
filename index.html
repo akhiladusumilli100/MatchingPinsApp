@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css">
 
     <meta name="theme-color" content="#2f80ed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Match Pins">
 </head>
 
 <body>
@@ -19,6 +22,7 @@
     <h1>🎯 Match Pins</h1>
 
     <div class="stats">
+
         <div>
             <h3>Moves</h3>
             <span id="moves">0</span>
@@ -28,26 +32,43 @@
             <h3>Correct</h3>
             <span id="correct">0 / 5</span>
         </div>
+
     </div>
 
-    <!-- BOARD (JS FILLS THIS) -->
     <div id="board"></div>
 
-    <p id="message">Tap two pins to swap them.</p>
+    <p id="message">
+        Tap two pins to swap them.
+    </p>
 
     <div class="buttons">
-        <button id="newGameButton">New Game</button>
+
+        <button id="newGameButton">
+            New Game
+        </button>
+
     </div>
 
 </div>
 
 <div id="winPopup" class="popup hidden">
+
     <div class="popup-content">
+
         <h2>🎉 You Win!</h2>
-        <p>You matched every pin!</p>
+
+        <p>
+            You matched every pin!
+        </p>
+
         <p id="finalMoves"></p>
-        <button id="playAgainButton">Play Again</button>
+
+        <button id="playAgainButton">
+            Play Again
+        </button>
+
     </div>
+
 </div>
 
 <script src="game.js"></script>

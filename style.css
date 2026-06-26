@@ -14,6 +14,7 @@ body {
     color: #fff;
 }
 
+/* Main container */
 .container {
     width: 90%;
     max-width: 420px;
@@ -24,53 +25,90 @@ body {
     text-align: center;
 }
 
+/* Title */
 h1 {
     margin-bottom: 15px;
 }
 
-/* BOARD */
+/* Stats section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stats div {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 12px;
+    width: 48%;
+}
+
+.stats h3 {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.stats span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Board */
 #board {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 
-/* PIN WRAPPER */
+/* Pins */
 .pin {
     width: 60px;
     height: 60px;
     cursor: pointer;
     transition: all 0.2s ease;
-
-    /* KEY: controls SVG color */
-    color: #ecf0f1;
 }
 
 .pin.selected {
-    transform: scale(1.15);
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px white);
 }
 
-/* COLOR CONTROL (THIS IS THE WHOLE SYSTEM) */
+/* Color variations */
 .pin[data-color="blue"] {
-    color: #2d9cdb;
+    filter: hue-rotate(200deg) saturate(2);
 }
 
 .pin[data-color="green"] {
-    color: #27ae60;
+    filter: hue-rotate(90deg) saturate(2);
 }
 
 .pin[data-color="red"] {
-    color: #eb5757;
+    filter: hue-rotate(0deg) saturate(2);
 }
 
 .pin[data-color="yellow"] {
-    color: #f2c94c;
+    filter: hue-rotate(40deg) saturate(2);
 }
 
 .pin[data-color="white"] {
-    color: #ecf0f1;
+    filter: none;
+}
+
+/* Colors */
+.blue { background: #2d9cdb; }
+.green { background: #27ae60; }
+.red { background: #eb5757; }
+.yellow { background: #f2c94c; }
+.white { background: #ecf0f1; }
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 button {
@@ -94,6 +132,19 @@ button:hover {
     color: white;
 }
 
+#checkButton {
+    background: #f2c94c;
+    color: black;
+}
+
+/* Message */
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Popup */
 .popup {
     position: fixed;
     top: 0;
@@ -112,6 +163,12 @@ button:hover {
     padding: 25px;
     border-radius: 15px;
     text-align: center;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    background: #2f80ed;
+    color: white;
 }
 
 .hidden {
