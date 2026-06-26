@@ -179,3 +179,14 @@ button:hover {
 .hidden {
     display: none;
 }
+
+@media (max-width: 600px) {
+    .pin {
+        width: 42px;
+        height: 42px;
+    }
+
+    #board {
+        gap: 5px;
+    }
+}
